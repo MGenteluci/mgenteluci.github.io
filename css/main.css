@@ -78,12 +78,12 @@ canvas {
   flex-direction: column;
 }
 
-@media only screen and (min-width : 1550px){
+@media only screen and (min-width : 1024px){
   #nome{
     font-size: 3vw;
   }
   .text{
-    font-size: 1vw;
+    font-size: 1.2vw;
   }
   #avatar{
     border-radius: 10%;
@@ -99,7 +99,7 @@ canvas {
       font-size: 8vw;
   }
   .text{
-      font-size: 3vw;
+      font-size: 5vw;
       text-align: center;
       margin-bottom: 2%;
   }
