@@ -81,32 +81,44 @@ canvas {
 @media only screen and (min-width : 1550px){
   #nome{
     font-size: 3vw;
-    font-family: 'Amatic SC', cursive;
   }
   .text{
     font-size: 1vw;
-    color: white;
-    font-family: 'Nanum Brush Script', cursive;
+  }
+  #avatar{
+    border-radius: 10%;
+    width: 20vw;
+    height: 30vh;
+    margin-bottom: 1%;
+    border: 3px solid #3d3d3d;
   }
 }
 
-@media only screen and (max-width: 1550px) {
+@media only screen and (max-width: 1024px) {
   #nome{
-      font-size: 10vw;
-      font-family: 'Amatic SC', cursive;
+      font-size: 8vw;
   }
   .text{
-      font-size: 4vw;
-      color: white;
-      font-family: 'Nanum Brush Script', cursive;
+      font-size: 3vw;
       text-align: center;
+      margin-bottom: 2%;
+  }
+  #avatar{
+    border-radius: 40%;
+    width: 70vw;
+    height: 35vh;
+    border: 3px solid #3d3d3d;
+    margin-bottom: 3%;
   }
 }
 
-.img{
-	height: 3%;
-	width: 3%;
-	padding-top: 2%;
+.text{
+  font-family: 'Philosopher', sans-serif;
+  color: white;
+}
+
+#nome{
+  font-family: 'Orbitron', sans-serif;
 }
 
 .fa {
@@ -140,4 +152,5 @@ canvas {
 .links{
   position: relative;
   display: inline-block;
+  margin-top: 2%;
 }
