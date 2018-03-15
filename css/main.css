@@ -96,12 +96,12 @@ canvas {
 
 @media only screen and (max-width: 1024px) {
   #nome{
-      font-size: 8vw;
+    font-size: 8vw;
   }
   .text{
-      font-size: 5vw;
-      text-align: center;
-      margin-bottom: 2%;
+    font-size: 5vw;
+    text-align: center;
+    margin-bottom: 2%;
   }
   #avatar{
     border-radius: 40%;
