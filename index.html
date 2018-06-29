@@ -66,10 +66,10 @@
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="Avatar do criador">
-        <h1 class="text-uppercase mb-0">Matheus Genteluci</h1>
+        <img class="img-fluid mb-5 d-block mx-auto" id="profile" alt="Avatar do criador">
+        <h1 class="text-uppercase mb-0" id="name"></h1>
         <hr class="star-light">
-        <h2 class="font-weight-light mb-0">Estudante - Sistemas de Informação - Java Web</h2>
+        <h2 class="font-weight-light mb-0" id="bio"></h2>
       </div>
     </header>
 
@@ -194,7 +194,7 @@
           </div>
           <div class="col-md-4">
             <h4 class="text-uppercase mb-4">Sobre o site</h4>
-            <p class="lead mb-0">Este site foi feito com o propósito de divulgar meu nome e futuramente
+            <p class="lead mb-0">Este site foi feito com o propósito de divulgar meu nome e 
               <a href="#portfolio">meu trabalho</a>.</p>
           </div>
         </div>
@@ -279,6 +279,8 @@
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
 
+    <!-- JS para utilizar a API do Github -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/github-api.js"></script>
   </body>
-
 </html>
