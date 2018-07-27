@@ -1,23 +1,33 @@
 var imgElement = document.getElementById('profile');
 var nameElement = document.getElementById('name');
 var bioElement = document.getElementById('bio');
+var textName;
+var textBio;
 
-function buscarPerfil(){
-    axios.get('https://api.github.com/users/mgenteluci')
-        .then(function (response) {
+(function(){
 
-            imgElement.setAttribute('src', response.data.avatar_url);
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.github.com/users/mgenteluci");
 
-            var textName = document.createTextNode(response.data.name);
-            nameElement.appendChild(textName);
+    xhr.addEventListener("load", function(){
 
-            var textBio = document.createTextNode(response.data.bio);
-            bioElement.appendChild(textBio);
+        var data = JSON.parse(xhr.response);
 
-        })
-        .catch(function (error){
-            console.warn(error);
-        });
-}
+        if(xhr.status == 200){
+            imgElement.setAttribute('src', data.avatar_url);
+            textName = document.createTextNode(data.name);
+            textBio = document.createTextNode(data.bio);
+            
+        }else{
+            textName = document.createTextNode("Matheus Genteluci");
+            textBio = document.createTextNode("Estudante - Sistemas de Informação");
+            console.warn("Status da requisição à API do Github: " + xhr.status);
+        }
+        
+        nameElement.appendChild(textName);
+        bioElement.appendChild(textBio);
 
-buscarPerfil();
+    });
+
+    xhr.send();
+})();
