@@ -6,6 +6,8 @@ var textBio;
 
 (function(){
 
+    document.cookie = "token=CookieTokenDeTeste";
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.github.com/users/mgenteluci");
 
