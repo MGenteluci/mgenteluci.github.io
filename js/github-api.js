@@ -7,14 +7,14 @@ var textBio;
 (function(){
 
     // Teste com cookies
-
     document.cookie = "token=CookieTokenDeTeste";
     document.cookie = 'user=Teste';
 
     document.cookie.split('; ').forEach(cookie => {
-        if(/^(user|token)=\w+/.test(cookie))
+        if(/^(user|token)=\w+/.test(cookie)) {
             console.warn(`Cookie found: `);
-            console.log(`Cookie: ${cookie}`);
+            console.log(`cookie: ${cookie}`);
+        }
     });
     // Fim do teste com cookies
 
