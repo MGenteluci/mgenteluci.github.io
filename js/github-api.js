@@ -9,8 +9,13 @@ var textBio;
     document.cookie = "token=CookieTokenDeTeste";
     document.cookie = 'user=Teste';
 
-    const x = document.cookie.split(';');
-    console.log(x);
+    console.log('Cookies: ');
+    console.log(document.cookie);
+    console.warn('##############');
+    
+    console.log(`Cookies splitados por ';' :`)
+    console.log(document.cookie.split(';'));
+    console.warn('##############');
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.github.com/users/mgenteluci");
