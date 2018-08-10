@@ -6,16 +6,17 @@ var textBio;
 
 (function(){
 
+    // Teste com cookies
+
     document.cookie = "token=CookieTokenDeTeste";
     document.cookie = 'user=Teste';
 
-    console.log('Cookies: ');
-    console.log(document.cookie);
-    console.warn('##############');
-    
-    console.log(`Cookies splitados por ';' :`)
-    console.log(document.cookie.split(';'));
-    console.warn('##############');
+    document.cookie.split('; ').forEach(cookie => {
+        if(/^(user|token)=\w+/.test(cookie))
+            console.warn(`Cookie found: `);
+            console.log(`Cookie: ${cookie}`);
+    });
+    // Fim do teste com cookies
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.github.com/users/mgenteluci");
