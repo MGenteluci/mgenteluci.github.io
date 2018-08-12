@@ -9,12 +9,11 @@ logoutBtn.addEventListener('click', () => {
 
 removeAllCookies = () => {
 
-    let cookies = document.cookie.split('; ');
+    let cookies = document.cookie.split('; ').map(cookie => {
+        return cookie.split('=');
+    });
 
     cookies.forEach(cookie => {
-
-        cookie = `${cookie};expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-
-    });;
-
+        document.cookie = `${cookie[0]}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+    });
 };
