@@ -22,21 +22,24 @@ hasButton();
 
 removeOneHomeOffice = id => {
     let cookies = getCookies();
-    let cookieToken = '';
+    let token = '';
 
     cookies.forEach(cookie => {
-        if(regexCookieToken.test(cookie))
-            cookieToken = cookie;
+        if(regexCookieToken.test(cookie)){
+
+            token = cookie.substring(6);
+
+        }
     });
 
-    if(cookieToken === '' || cookieToken === null){
+    if(token === '' || token === null){
         alert('Você não possui permissão para remover um Home Office');
         return;
     }
 
     let config = {
         headers: {
-            "Authorization": "Bearer " + cookieToken
+            "Authorization": "Bearer " + token
         }
     }
 
