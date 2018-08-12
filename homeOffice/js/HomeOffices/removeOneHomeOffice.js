@@ -1,5 +1,6 @@
 let btns = document.querySelectorAll('table button');
 const regexCookies = /(token|username)=\w+/;
+const regexCookieToken = /token=\w+/;
 
 hasButton = () => {
 
@@ -21,15 +22,21 @@ hasButton();
 
 removeOneHomeOffice = id => {
     let cookies = getCookies();
+    let cookieToken = '';
 
-    if(!regexCookies.test(cookies[0]) && !regexCookies.test(cookies[1])){
-        alert('Você não tem permissão para deletar um Home Office');
+    cookies.forEach(cookie => {
+        if(regexCookieToken.test(cookie))
+            cookieToken = cookie;
+    });
+
+    if(cookieToken === '' || cookieToken === null){
+        alert('Você não possui permissão para remover um Home Office');
         return;
     }
 
     let config = {
         headers: {
-            "Authorization": "Bearer " + cookies[2]
+            "Authorization": "Bearer " + cookieToken
         }
     }
 
