@@ -29,7 +29,7 @@ removeOneHomeOffice = id => {
 
     let config = {
         headers: {
-            "Authorization": "Bearer " + cookies[0]
+            "Authorization": "Bearer " + cookies[2]
         }
     }
 
