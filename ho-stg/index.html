@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auth</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/Login/login.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Home Office</h1>
+        
+        <form>
+            <div class="alert alert-warning invisible" role="alert" id="pError"></div>
+
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Entrar</button>
+        </form>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/removeCookies.js"></script>
+    <script src="js/signIn.js"></script>
+</body>
+</html>
