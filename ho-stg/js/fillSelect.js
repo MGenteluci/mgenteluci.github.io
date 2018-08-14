@@ -1,16 +1,6 @@
 const select = document.querySelector('.selectUser');
 
-(() => {
-
-    const opt = document.createElement('option');
-    opt.setAttribute('value', getCookieValue('userId'));
-    opt.textContent = getCookieValue('name');
-
-    select.appendChild(opt);
-    
-})();
-
-getCookieValue = (cookieName) => {
+getCookieValue = cookieName => {
     let cookies = document.cookie.split('; ');  
     let cookie;
     
@@ -20,4 +10,14 @@ getCookieValue = (cookieName) => {
     });
 
     return cookie;
-}
+};
+
+(() => {
+
+    const opt = document.createElement('option');
+    opt.setAttribute('value', getCookieValue('userId'));
+    opt.textContent = getCookieValue('name');
+
+    select.appendChild(opt);
+    
+})();
