@@ -12,15 +12,44 @@ hasButton = () => {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const id = this.event.target.id;
+            console.log(this.event.target.parentNode);
             
-            removeOneHomeOffice(id);
+            // removeOneHomeOffice(id);
         });
     });
 };
 
 hasButton();
 
+doesHomeOfficeBelongtoCurrentUser = nameFromTd => {
+
+    if(getCookieValue('name') === nameFromTd)
+        return true;
+
+    alert('Você não pode remover o Home Office de outra pessoa');
+    return false;
+};
+
+getCookies = () => {
+
+    let cookies = document.cookie.split('; ');
+    let cookiesRetornados = [];
+
+    cookies.forEach(cookie => {
+
+        if(regexCookies.test(cookie))
+            cookiesRetornados.push(cookie);
+
+    });
+
+    return cookiesRetornados;
+};
+
 removeOneHomeOffice = id => {
+
+    if(!doesHomeOfficeBelongtoCurrentUser(nameFromTd))
+        return;
+
     let cookies = getCookies();
     let token = '';
 
@@ -51,19 +80,4 @@ removeOneHomeOffice = id => {
         window.location.href="homeOffices.html";
     })
     .catch(err => console.warn(err));
-};
-
-getCookies = () => {
-
-    let cookies = document.cookie.split('; ');
-    let cookiesRetornados = [];
-
-    cookies.forEach(cookie => {
-
-        if(regexCookies.test(cookie))
-            cookiesRetornados.push(cookie);
-
-    });
-
-    return cookiesRetornados;
 };
