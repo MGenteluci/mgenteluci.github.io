@@ -1,4 +1,5 @@
 let btns = document.querySelectorAll('table button');
+let alertRmv = document.querySelector('#alertRemoveHomeOfficeFromSomeoneElse');
 const regexCookies = /(token|username)=\w+/;
 const regexCookieToken = /token=\w+/;
 
@@ -12,15 +13,44 @@ hasButton = () => {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const id = this.event.target.id;
-            
-            removeOneHomeOffice(id);
+            let nameFromTd = this.event.target.parentNode.parentNode.firstChild.textContent;
+            removeOneHomeOffice(id, nameFromTd);
         });
     });
 };
 
 hasButton();
 
-removeOneHomeOffice = id => {
+doesHomeOfficeBelongtoCurrentUser = nameFromTd => {
+
+    if(getCookieValue('name') === nameFromTd)
+        return true;
+
+    alertRmv.textContent = 'Não é possível remover o Home Office de outra pessoa';
+    alertRmv.classList.remove('invisible');
+    return false;
+};
+
+getCookies = () => {
+
+    let cookies = document.cookie.split('; ');
+    let cookiesRetornados = [];
+
+    cookies.forEach(cookie => {
+
+        if(regexCookies.test(cookie))
+            cookiesRetornados.push(cookie);
+
+    });
+
+    return cookiesRetornados;
+};
+
+removeOneHomeOffice = (id, nameFromTd) => {
+
+    if(!doesHomeOfficeBelongtoCurrentUser(nameFromTd))
+        return;
+
     let cookies = getCookies();
     let token = '';
 
@@ -51,19 +81,4 @@ removeOneHomeOffice = id => {
         window.location.href="homeOffices.html";
     })
     .catch(err => console.warn(err));
-};
-
-getCookies = () => {
-
-    let cookies = document.cookie.split('; ');
-    let cookiesRetornados = [];
-
-    cookies.forEach(cookie => {
-
-        if(regexCookies.test(cookie))
-            cookiesRetornados.push(cookie);
-
-    });
-
-    return cookiesRetornados;
 };

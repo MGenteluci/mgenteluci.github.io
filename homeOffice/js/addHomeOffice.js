@@ -39,19 +39,25 @@ validaForm = form => {
         pError.classList.remove('invisible');
         return false;
     }
+
+    if(form.day.value === '' || form.day.value === null){
+        pError.textContent = 'Data não pode ser nula';
+        pError.classList.remove('invisible');
+        return false;
+    }
     
     let h = new Date();
     let hoje = new Date(h.getFullYear(), h.getMonth(), h.getDate());
     let data = new Date(day);
     
     if(data.getTime() < hoje.getTime()){
-        pError.textContent = 'A data do Home Office não pode ser anterior ao dia de hoje';
+        pError.textContent = 'Data não pode ser anterior ao dia de hoje';
         pError.classList.remove('invisible');
         return false;
     }
     
     if(data.getFullYear() > hoje.getFullYear()+1){
-        pError.textContent = 'Não é possível marcar um Home Office para uma data tão distante';
+        pError.textContent = 'Data não pode ser tão distante';
         pError.classList.remove('invisible');
         return false;
     }
