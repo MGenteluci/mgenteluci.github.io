@@ -14,8 +14,8 @@ form.addEventListener('submit', event => {
     .then(res => {
 
         setCookieToken(res.data.token);
-        setCookieUsername(username);
-        
+        setCookieFullName(res.data.user[0].name, res.data.user[0].surname);
+        setCookieUserId(res.data.user[0]._id);
         window.location.href = 'homeOffices.html';
     })
     .catch(err => {
@@ -30,8 +30,12 @@ setCookieToken = token => {
     document.cookie = `token=${token}`;
 };
 
-setCookieUsername = username => {
-    document.cookie = `username=${username}`;
+setCookieFullName = (name, surname) => {
+    document.cookie = `name=${name} ${surname}`;
+};
+
+setCookieUserId = userId => {
+    document.cookie = `userId=${userId}`;
 };
 
 isLoginFormValid = form => {
