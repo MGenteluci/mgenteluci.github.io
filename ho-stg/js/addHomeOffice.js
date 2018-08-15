@@ -35,13 +35,13 @@ validaForm = form => {
     let day = form.day.value.split('-');
 
     if(user === '' || user === null){
-        pError.textContent = 'Usuário não pode ser nulo';
+        pError.insertAdjacentText('afterbegin', 'Usuário não pode ser nulo');
         pError.classList.remove('invisible');
         return false;
     }
 
     if(form.day.value === '' || form.day.value === null){
-        pError.textContent = 'Data não pode ser nula';
+        pError.insertAdjacentText('afterbegin', 'Data não pode ser nula');
         pError.classList.remove('invisible');
         return false;
     }
@@ -51,13 +51,13 @@ validaForm = form => {
     let data = new Date(day);
     
     if(data.getTime() < hoje.getTime()){
-        pError.textContent = 'Data não pode ser anterior ao dia de hoje';
+        pError.insertAdjacentText('afterbegin', 'Data não pode ser anterior ao dia de hoje');
         pError.classList.remove('invisible');
         return false;
     }
     
     if(data.getFullYear() > hoje.getFullYear()+1){
-        pError.textContent = 'Data não pode ser tão distante';
+        pError.insertAdjacentText('afterbegin', 'Data não pode ser tão distante');
         pError.classList.remove('invisible');
         return false;
     }

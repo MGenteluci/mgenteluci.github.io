@@ -26,7 +26,7 @@ doesHomeOfficeBelongtoCurrentUser = nameFromTd => {
     if(getCookieValue('name') === nameFromTd)
         return true;
 
-    alertRmv.textContent = 'Não é possível remover o Home Office de outra pessoa';
+    alertRmv.insertAdjacentText('afterend', 'Não é possível remover o Home Office de outra pessoa');
     alertRmv.classList.remove('invisible');
     return false;
 };
