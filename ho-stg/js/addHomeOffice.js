@@ -35,13 +35,23 @@ validaForm = form => {
     let day = form.day.value.split('-');
 
     if(user === '' || user === null){
-        pError.insertAdjacentText('afterbegin', 'Usuário não pode ser nulo');
+        pError.innerHTML =  `
+                            Usuário não pode ser nulo
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            `;  
         pError.classList.remove('invisible');
         return false;
     }
 
     if(form.day.value === '' || form.day.value === null){
-        pError.insertAdjacentText('afterbegin', 'Data não pode ser nula');
+        pError.innerHTML =  `
+                            Data não pode ser nula
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            `;
         pError.classList.remove('invisible');
         return false;
     }
@@ -51,13 +61,23 @@ validaForm = form => {
     let data = new Date(day);
     
     if(data.getTime() < hoje.getTime()){
-        pError.insertAdjacentText('afterbegin', 'Data não pode ser anterior ao dia de hoje');
+        pError.innerHTML =  `
+                            Data não pode ser anterior ao dia de hoje
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            `;
         pError.classList.remove('invisible');
         return false;
     }
     
     if(data.getFullYear() > hoje.getFullYear()+1){
-        pError.insertAdjacentText('afterbegin', 'Data não pode ser tão distante');
+        pError.innerHTML =  `
+                            Data não pode ser tão distante
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            `;
         pError.classList.remove('invisible');
         return false;
     }

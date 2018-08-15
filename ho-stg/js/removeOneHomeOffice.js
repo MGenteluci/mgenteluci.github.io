@@ -27,7 +27,7 @@ doesHomeOfficeBelongtoCurrentUser = nameFromTd => {
         return true;
 
     alertRmv.innerHTML = `
-                            Não é possível remover o HomeOffice de Outra Pessoa
+                            Não é possível remover o Home Office de outra pessoa
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
