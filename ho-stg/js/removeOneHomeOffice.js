@@ -12,12 +12,8 @@ hasButton = () => {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const id = this.event.target.id;
-
-            console.log(this.event.target.parentNode.parentNode.textContent);
-            console.log(this.event.target.parentNode.parentNode.firstChild);
-            console.log(this.event.target.parentNode.parentNode.firstChild.textContent);
-            console.log(this.event.target.parentNode.parentNode.firstChild.innerHTML);
-            // removeOneHomeOffice(id);
+            let nameFromTd = this.event.target.parentNode.parentNode.firstChild.textContent;
+            removeOneHomeOffice(id, nameFromTd);
         });
     });
 };
@@ -48,7 +44,7 @@ getCookies = () => {
     return cookiesRetornados;
 };
 
-removeOneHomeOffice = id => {
+removeOneHomeOffice = (id, nameFromTd) => {
 
     if(!doesHomeOfficeBelongtoCurrentUser(nameFromTd))
         return;
