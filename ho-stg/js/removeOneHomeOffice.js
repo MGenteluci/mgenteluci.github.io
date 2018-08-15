@@ -1,4 +1,5 @@
 let btns = document.querySelectorAll('table button');
+let alertRmv = document.querySelector('#alertRemoveHomeOfficeFromSomeoneElse');
 const regexCookies = /(token|username)=\w+/;
 const regexCookieToken = /token=\w+/;
 
@@ -25,7 +26,8 @@ doesHomeOfficeBelongtoCurrentUser = nameFromTd => {
     if(getCookieValue('name') === nameFromTd)
         return true;
 
-    alert('Você não pode remover o Home Office de outra pessoa');
+    alertRmv.textContent = 'Não é possível remover o Home Office de outra pessoa';
+    alertRmv.classList.remove('invisible');
     return false;
 };
 
