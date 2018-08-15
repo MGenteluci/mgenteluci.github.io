@@ -2,7 +2,7 @@ const tbody = document.querySelector('table tbody');
 
 getAllHomeOffices = () => {
 
-    axios.get('https://hoffice-api.herokuapp.com/homeOffices/current')
+    axios.get('https://hoffice-api-stg.herokuapp.com/homeOffices/current')
     .then(res => createTable(res.data))
     .catch(err => console.warn(err));
 
@@ -12,6 +12,10 @@ getAllHomeOffices();
 
 createTable = (homeOfficesList) => {
     homeOfficesList.forEach(ho => {
+
+        if(!isHomeOfficeFromTheUsersTeam(ho.user.team._id))
+            return;
+
         const tr = document.createElement('tr');
 
         const tdName = document.createElement('td');
@@ -35,4 +39,14 @@ createTable = (homeOfficesList) => {
         tr.appendChild(tdButton); 
         tbody.appendChild(tr);
     });
+};
+
+isHomeOfficeFromTheUsersTeam = homeOfficeTeamId => {
+
+    let id = getCookieValue('teamId');
+
+    if(id === homeOfficeTeamId)
+        return true;
+
+    return false;
 };

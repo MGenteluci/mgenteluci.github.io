@@ -43,7 +43,7 @@ removeOneHomeOffice = id => {
         }
     }
 
-    axios.delete(`https://hoffice-api.herokuapp.com/homeOffices/${id}`, config)
+    axios.delete(`https://hoffice-api-stg.herokuapp.com/homeOffices/${id}`, config)
     .then(res => {
         console.log(res.data.message);
         tbody.innerHTML = '';    

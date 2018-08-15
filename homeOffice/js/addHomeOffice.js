@@ -8,7 +8,7 @@ form.addEventListener('submit', event => {
     if(!validaForm(form))
         return;
 
-    axios.post('https://hoffice-api.herokuapp.com/homeOffices', {
+    axios.post('https://hoffice-api-stg.herokuapp.com/homeOffices', {
         userId: form.user.value,
         day: form.day.value
     })
