@@ -12,9 +12,10 @@ hasButton = () => {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const id = this.event.target.id;
-            console.log('TD pai: ' + this.event.target.parentNode);
-            console.log('TD pai do pai: ' + this.event.target.parentNode.parentNode);
-            console.log('Valor do td: ' + this.event.target.parentNode.parentNode.value);
+            console.log(this.event.target);
+            console.log(this.event.target.parentNode);
+            console.log(this.event.target.parentNode.parentNode);
+            console.log(this.event.target.parentNode.parentNode.textContent);
             
             // removeOneHomeOffice(id);
         });
