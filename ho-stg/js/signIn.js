@@ -12,10 +12,10 @@ form.addEventListener('submit', event => {
 
     axios.post('https://hoffice-api-stg.herokuapp.com/users/signin', { username: username, password: password})
     .then(res => {
-
         setCookieToken(res.data.token);
         setCookieFullName(res.data.user[0].name, res.data.user[0].surname);
         setCookieUserId(res.data.user[0]._id);
+        setCookieTeamId(res.data.user[0].team);
         window.location.href = 'homeOffices.html';
     })
     .catch(err => {
@@ -37,6 +37,10 @@ setCookieFullName = (name, surname) => {
 setCookieUserId = userId => {
     document.cookie = `userId=${userId}`;
 };
+
+setCookieTeamId = teamId => {
+    document.cookie = `teamId=${teamId}`;
+}
 
 isLoginFormValid = form => {
 
