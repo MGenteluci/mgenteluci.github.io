@@ -12,11 +12,11 @@ hasButton = () => {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const id = this.event.target.id;
-            console.log(this.event.target);
-            console.log(this.event.target.parentNode);
-            console.log(this.event.target.parentNode.parentNode);
+
             console.log(this.event.target.parentNode.parentNode.textContent);
-            
+            console.log(this.event.target.parentNode.parentNode.firstChild);
+            console.log(this.event.target.parentNode.parentNode.firstChild.textContent);
+            console.log(this.event.target.parentNode.parentNode.firstChild.innerHTML);
             // removeOneHomeOffice(id);
         });
     });
