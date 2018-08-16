@@ -15,7 +15,7 @@ form.addEventListener('submit', event => {
         setCookieToken(res.data.token);
         setCookieFullName(res.data.user[0].name, res.data.user[0].surname);
         setCookieUserId(res.data.user[0]._id);
-        setCookieTeamId(res.data.user[0].team);
+        setCookieTeamId(res.data.user[0].team._id);
 		setCookieTeamChatUrl(res.data.user[0].team.teamChatUrl);
         window.location.href = 'homeOffices.html';
     })
