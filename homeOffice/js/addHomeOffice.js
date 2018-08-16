@@ -68,8 +68,20 @@ sendMessageToSlack = dayFromForm => {
     let day = new Date(dayFromForm.split('-'));
 
     let options = {
-        text: `${name} marcou um Home Office para o dia ${day.toLocaleDateString()}`
-    };
+        text: '*Novo home office agendado!*',
+        attachments: [{
+            color: '#7e8700',
+            text: `*${name}* marcou um Home Office para o dia _${day.toLocaleDateString()}_`,
+            actions: [
+                {
+                    type: 'button',
+                    text: 'Marcar meu Home Office',
+                    style: 'primary',
+                    url: 'https://matheusgenteluci.com.br/homeOffice'
+                }
+            ]
+        }]
+    }
 
     axios.post(url, JSON.stringify(options))
     .then(result => window.location.href="homeOffices.html")
