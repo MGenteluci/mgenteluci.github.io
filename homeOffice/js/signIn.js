@@ -16,6 +16,7 @@ form.addEventListener('submit', event => {
         setCookieFullName(res.data.user[0].name, res.data.user[0].surname);
         setCookieUserId(res.data.user[0]._id);
         setCookieTeamId(res.data.user[0].team);
+		setCookieTeamChatUrl(res.data.user[0].team.teamChatUrl);
         window.location.href = 'homeOffices.html';
     })
     .catch(err => {
@@ -40,7 +41,11 @@ setCookieUserId = userId => {
 
 setCookieTeamId = teamId => {
     document.cookie = `teamId=${teamId}`;
-}
+};
+
+setCookieTeamChatUrl = teamChatUrl => {
+    document.cookie = `teamChatUrl=${teamChatUrl}`;
+};
 
 isLoginFormValid = form => {
 

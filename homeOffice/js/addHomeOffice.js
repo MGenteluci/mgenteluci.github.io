@@ -13,10 +13,7 @@ form.addEventListener('submit', event => {
         day: form.day.value
     })
     .then(res => {
-        formCleaner();
-        tbody.innerHTML = '';    
-        getAllHomeOffices();
-        window.location.href="homeOffices.html";
+        sendMessageToSlack(form.day.value);
     })
     .catch(err => console.warn(err));
 
@@ -63,4 +60,18 @@ validaForm = form => {
     }
 
     return true;
+};
+
+sendMessageToSlack = dayFromForm => {
+    let name = getCookieValue('name');
+    let url = getCookieValue('teamChatUrl');
+    let day = new Date(dayFromForm.split('-'));
+
+    let options = {
+        text: `${name} marcou um Home Office para o dia ${day.toLocaleDateString()}`
+    };
+
+    axios.post(url, JSON.stringify(options))
+    .then(result => window.location.href="homeOffices.html")
+    .catch(err => window.location.href="homeOffices.html");
 };
