@@ -14,7 +14,6 @@ form.addEventListener('submit', event => {
     })
     .then(res => {
         sendMessageToSlack(form.day.value);
-        //window.location.href="homeOffices.html";
     })
     .catch(err => console.warn(err));
     
@@ -73,6 +72,10 @@ sendMessageToSlack = dayFromForm => {
 
     axios.post('https://hooks.slack.com/services/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', 
     JSON.stringify(options))
-    .then(result => console.log('Mensagem enviada para o Slack'))
-    .catch(err => console.warn('Não foi possível enviar mensagem para o Slack'));
+    .then(result => window.location.href="homeOffices.html")
+    .catch(err => {
+        console.warn('Não foi possível enviar mensagem para o Slack');
+        console.error(err);
+        window.location.href="homeOffices.html";
+    });
 }
