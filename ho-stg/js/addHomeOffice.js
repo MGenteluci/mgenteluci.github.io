@@ -64,14 +64,14 @@ validaForm = form => {
 
 sendMessageToSlack = dayFromForm => {
     let name = getCookieValue('name');
+    let url = getCookieValue('teamChatUrl');
     let day = new Date(dayFromForm.split('-'));
 
     let options = {
         text: `${name} marcou um Home Office para o dia ${day.toLocaleDateString()}`
     };
 
-    axios.post('https://hooks.slack.com/services/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', 
-    JSON.stringify(options))
+    axios.post(url, JSON.stringify(options))
     .then(result => window.location.href="homeOffices.html")
     .catch(err => {
         console.warn('Não foi possível enviar mensagem para o Slack');
