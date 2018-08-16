@@ -13,8 +13,8 @@ form.addEventListener('submit', event => {
         day: form.day.value
     })
     .then(res => {
-        sendMessageToSlack();
-        window.location.href="homeOffices.html";
+        sendMessageToSlack(form.day.value);
+        //window.location.href="homeOffices.html";
     })
     .catch(err => console.warn(err));
     
@@ -63,12 +63,12 @@ validaForm = form => {
     return true;
 };
 
-sendMessageToSlack = () => {
+sendMessageToSlack = dayFromForm => {
     let name = getCookieValue('name');
+    let day = new Date(dayFromForm.split('-'));
 
     let options = {
-        title: 'Novo Home Office Adicionado',
-        text: `${name} marcou um Home Office!`
+        text: `${name} marcou um Home Office para o dia ${day.toLocaleDateString()}`
     };
 
     axios.post('https://hooks.slack.com/services/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', 
