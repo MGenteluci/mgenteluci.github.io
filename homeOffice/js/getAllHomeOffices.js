@@ -2,7 +2,7 @@ const tbody = document.querySelector('table tbody');
 
 getAllHomeOffices = () => {
 
-    axios.get('https://hoffice-api-stg.herokuapp.com/homeOffices/current')
+    axios.get('https://hoffice-api.herokuapp.com/homeOffices/current')
     .then(res => createTable(res.data))
     .catch(err => console.warn(err));
 
