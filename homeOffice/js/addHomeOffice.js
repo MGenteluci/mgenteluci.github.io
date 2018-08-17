@@ -79,7 +79,8 @@ sendMessageToSlack = dayFromForm => {
                     style: 'primary',
                     url: 'https://matheusgenteluci.com.br/homeOffice'
                 }
-            ]
+            ],
+            mrkdwn_in: ['text']
         }]
     }
 
