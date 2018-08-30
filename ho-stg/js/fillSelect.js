@@ -15,9 +15,14 @@ getCookieValue = cookieName => {
 (() => {
 
     const opt = document.createElement('option');
-    opt.setAttribute('value', getCookieValue('userId'));
-    opt.textContent = getCookieValue('name');
+    
+    if(getCookieValue('userRole') != 'Analista'){
+        opt.setAttribute('value', '');
+        opt.textContent = 'Sem permissão para agendar';
+    }else{
+        opt.setAttribute('value', getCookieValue('userId'));
+        opt.textContent = getCookieValue('name');
+    }
 
     select.appendChild(opt);
-    
 })();

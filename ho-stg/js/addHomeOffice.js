@@ -64,7 +64,10 @@ validaForm = form => {
 
 sendMessageToSlack = dayFromForm => {
     let name = getCookieValue('name');
-    let url = getCookieValue('teamChatUrl');
+
+    //In STG a fixed URL is used, so the tests wont annoy people's chat
+    let url = 'https://hooks.slack.com/services/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';
+
     let day = new Date(dayFromForm.split('-'));
 
     let options = {
