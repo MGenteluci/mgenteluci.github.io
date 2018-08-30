@@ -1,8 +1,10 @@
 (() => {
 
-    let cookies = document.cookie.split(';');
+    let cookies = document.cookie.split('; ').map(cookie => {
+        return cookie.split('=');
+    });
 
-    if(!cookies[0] || !cookies[1])
-        window.location.href = 'index.html';
+    //if(cookies.length < 6)
+        //window.location.href = 'index.html';
 
 })();
