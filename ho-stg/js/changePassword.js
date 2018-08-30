@@ -6,7 +6,7 @@ form.addEventListener('submit', event => {
 
     event.preventDefault();
 
-    axios.post('https://hoffice-api-stg.herokuapp.com/users/changePassword', {
+    axios.patch('https://hoffice-api-stg.herokuapp.com/users/changePassword', {
         userId: getCookieValue('userId'),
         password: form.password.value,
         newPassword: form.newPassword.value
