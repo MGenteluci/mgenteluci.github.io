@@ -2,7 +2,9 @@ const form = document.querySelector("form");
 const btnBack = document.querySelector("#backToHomeOffices");
 const pError = document.querySelector('#pError');
 
-form.addEventListener('click', () => {
+form.addEventListener('submit', event => {
+
+    event.preventDefault();
 
     axios.post('https://hoffice-api-stg.herokuapp.com/users/changePassword', {
         userId: getCookieValue('userId'),
@@ -10,10 +12,11 @@ form.addEventListener('click', () => {
         newPassword: form.newPassword.value
     })
     .then(res => {
-        
+        window.alert('Senha alterada, por favor faça login novamente!');
+        window.location.href = 'index.html';
     })
     .catch(err => {
-        pError.textContent = 'Não autorizado';
+        pError.textContent = 'Algo não está certo';
         pError.classList.remove('invisible');
     });
 

@@ -4,7 +4,7 @@
         return cookie.split('=');
     });
 
-    //if(cookies.length < 6)
-        //window.location.href = 'index.html';
+    if(cookies.length < 6)
+        window.location.href = 'index.html';
 
 })();
