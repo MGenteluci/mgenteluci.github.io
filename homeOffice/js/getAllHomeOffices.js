@@ -1,4 +1,5 @@
 const tbody = document.querySelector('table tbody');
+const role = getCookieValue('userRole');
 
 getAllHomeOffices = () => {
 
@@ -45,7 +46,7 @@ isHomeOfficeFromTheUsersTeam = homeOfficeTeamId => {
 
     let id = getCookieValue('teamId');
 
-    if(id === homeOfficeTeamId)
+    if(id === homeOfficeTeamId || role === 'Coordenador')
         return true;
 
     return false;
