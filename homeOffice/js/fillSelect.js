@@ -15,8 +15,13 @@ getCookieValue = cookieName => {
 (() => {
 
     const opt = document.createElement('option');
-    opt.setAttribute('value', getCookieValue('userId'));
-    opt.textContent = getCookieValue('name');
+    
+    if(getCookieValue('userRole') == 'Estagiário' || getCookieValue('userRole') == 'Coordenador'){
+        opt.textContent = 'Sem permissão';
+    }else{
+        opt.setAttribute('value', getCookieValue('userId'));
+        opt.textContent = getCookieValue('name');
+    }
 
     select.appendChild(opt);
     
