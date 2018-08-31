@@ -21,11 +21,18 @@ form button {
     text-align: center;
 }
 
-#logoutBtn {
-    text-align: center;
-    width: 40%;
-    margin-left: 30%;
+ul {
     margin-top: 50%;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding: 12px;
+}
+
+li button {
+    width: 40%;
 }
 
 @media screen and (min-width: 620px) {
@@ -46,11 +53,22 @@ form button {
         margin-left: 40%;
     }
 
-    #logoutBtn {
-        width: 10%;
-        float: right;
-        margin-top: 14%;
-        margin-right: 1%;
+    ul {
+        margin-top: 18%;
+        text-align: center;
+    }
+    
+    li {
+        display: inline;
+        padding: 12px;
+    }
+    
+    li button {
+        width: 8%;
+    }
+
+    li button#goToChangePasswordPage {
+        width: 12%;
     }
 
 }
