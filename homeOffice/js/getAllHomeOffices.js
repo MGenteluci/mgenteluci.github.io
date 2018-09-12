@@ -23,6 +23,9 @@ createTable = (homeOfficesList) => {
         tdName.setAttribute('scope', 'row');
         tdName.textContent = `${ho.user.name} ${ho.user.surname}`;
 
+        const tdTeam = document.createElement('td');
+        tdTeam.textContent = `${ho.user.team.name}`;
+
         const data = new Date(ho.day);
         const tdDay = document.createElement('td');
         tdDay.textContent = `${data.getDate()+1}/${data.getMonth()+1}/${data.getFullYear()}`;
@@ -36,6 +39,7 @@ createTable = (homeOfficesList) => {
         tdButton.appendChild(button);
 
         tr.appendChild(tdName);
+        tr.appendChild(tdTeam);
         tr.appendChild(tdDay); 
         tr.appendChild(tdButton); 
         tbody.appendChild(tr);
