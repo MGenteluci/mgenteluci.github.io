@@ -1,0 +1,58 @@
+body {
+    background-color: #C5CAE9;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* MAIN */
+main {
+    margin-top: 20vh;
+}
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    font-size: 10vw;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #37474F;
+}
+
+ul {
+    list-style: none;
+    margin-top: 5vh;
+}
+
+ul li {
+    font-size: 6vw;
+    margin-top: 2vh;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #546E7A;
+}
+
+.list-last-item {
+    margin-top: 6vh;
+}
+
+@media screen and (min-width: 1024px){
+
+    h1 {
+        font-size: 4vw;
+    }
+
+    ul li {
+        font-size: 2vw;
+    }
+
+    ul li a:hover {
+        color: #263238;
+        transition: 1s;
+    }
+
+}
