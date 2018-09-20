@@ -71,7 +71,7 @@ sendMessageToSlack = dayFromForm => {
         text: '*Novo home office agendado!*',
         attachments: [{
             color: '#7e8700',
-            text: `*${name}* marcou um Home Office para o dia _${day.toLocaleDateString()}_`,
+            text: `*${name}* marcou um Home Office para o dia _${a.getDate()}/${a.getMonth()+1}/${a.getFullYear()}_`,
             actions: [
                 {
                     type: 'button',
