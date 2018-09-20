@@ -53,7 +53,7 @@ sendMessageToSlack = dayFromForm => {
     let day = new Date(dayFromForm.split('-'));
 
     let options = {
-        text: `${name} marcou um Home Office para o dia ${a.getDate()}/${a.getMonth()+1}/${a.getFullYear()}`
+        text: `${name} marcou um Home Office para o dia ${day.getDate()}/${day.getMonth()+1}/${day.getFullYear()}`
     };
 
     axios.post(url, JSON.stringify(options))
