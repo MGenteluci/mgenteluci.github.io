@@ -1,24 +1,6 @@
 const form = document.querySelector('form');
 const pError = document.querySelector('#pError');
 
-form.addEventListener('submit', event => {
-
-    event.preventDefault();
-
-    if(!validaForm(form))
-        return;
-
-    axios.post('https://hoffice-api-stg.herokuapp.com/homeOffices', {
-        userId: form.user.value,
-        day: form.day.value
-    })
-    .then(res => {
-        sendMessageToSlack(form.day.value);
-    })
-    .catch(err => console.warn(err));
-    
-});
-
 formCleaner = () => {
     pError.textContent = '';
     form.user.value = '';
@@ -82,3 +64,21 @@ sendMessageToSlack = dayFromForm => {
         window.location.href="homeOffices.html";
     });
 }
+
+form.addEventListener('submit', event => {
+
+    event.preventDefault();
+
+    if(!validaForm(form))
+        return;
+
+    axios.post('https://hoffice-api-stg.herokuapp.com/homeOffices', {
+        userId: form.user.value,
+        day: form.day.value
+    })
+    .then(res => {
+        sendMessageToSlack(form.day.value);
+    })
+    .catch(err => console.warn(err));
+    
+});
