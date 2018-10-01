@@ -73,7 +73,7 @@ removeOneHomeOffice = (id, nameFromTd) => {
         }
     }
 
-    axios.delete(`https://hoffice-api-stg.herokuapp.com/homeOffices/${id}`, config)
+    axios.delete(`http://dialga-prd.cloud.globoi.com/homeOffices/${id}`, config)
     .then(res => {
         console.log(res.data.message);
         tbody.innerHTML = '';    

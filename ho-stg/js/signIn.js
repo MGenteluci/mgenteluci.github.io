@@ -10,7 +10,7 @@ form.addEventListener('submit', event => {
     let username = form.username.value;
     let password = form.password.value;
 
-    axios.post('https://hoffice-api-stg.herokuapp.com/users/signin', { username: username, password: password})
+    axios.post('http://dialga-prd.cloud.globoi.com/users/signin', { username: username, password: password})
     .then(res => {
         setCookieToken(res.data.token);
         setCookieFullName(res.data.user[0].name, res.data.user[0].surname);

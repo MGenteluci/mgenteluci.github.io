@@ -16,7 +16,7 @@ getCookieValue = cookieName => {
 
     const opt = document.createElement('option');
     
-    if(getCookieValue('userRole') != 'Analista'){
+    if(getCookieValue('userRole') === 'Estagiário' || getCookieValue('userRole') === 'Coordenador'){
         opt.textContent = 'Sem permissão';
     }else{
         opt.setAttribute('value', getCookieValue('userId'));

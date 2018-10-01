@@ -6,7 +6,7 @@ form.addEventListener('submit', event => {
 
     event.preventDefault();
 
-    axios.patch(`https://hoffice-api.herokuapp.com/users/password/${getCookieValue('userId')}`, {
+    axios.patch(`http://dialga-prd.cloud.globoi.com/users/password/${getCookieValue('userId')}`, {
         password: form.password.value,
         newPassword: form.newPassword.value
     })
