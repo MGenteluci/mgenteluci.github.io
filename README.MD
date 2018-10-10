@@ -1,6 +1,6 @@
 # Matheus Genteluci
 
-## Finalidade do Website
+## Finalidade do Projeto
 
 * Divulgar meus trabalhos e formas de contato.
 * Servir como host para outros projetos estáticos secundários.
