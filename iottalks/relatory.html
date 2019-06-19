@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Relatório</title>
+
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/relatory.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="menu">
+      <ul>
+        <li><a href="relatory.html">Perfil</a></li>
+        <li><a href="relatory.html">Relatório</a></li>
+        <li><a href="index.html">Sair</a></li>
+      </ul>
+    </div>
+
+    <div class="picker">
+      <h1>Relatório</h1>
+      <input type="date" id="date-picker"/>
+    </div>
+  </div>
+  <div class="content">
+    <p id="tempo-arco-aberto"></p>
+    <p id="consumo-diario"></p>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/relatory.js"></script>
+</body>
+</html>

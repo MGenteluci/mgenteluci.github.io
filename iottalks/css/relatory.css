@@ -1,0 +1,65 @@
+body {
+  text-align: center;
+  background-color: #EEEEEE;
+}
+
+.header {
+  width: 100%;
+  height: 35vh;
+  border-bottom: 1px solid #E0E0E0;
+  border-bottom-width: 80%;
+}
+
+.header .menu {
+  background-color: #009688;
+  height: 8vh;
+}
+
+.header .picker {
+  height: 27vh;
+}
+
+.header menu ul {
+  padding-left: 20vw;
+}
+
+.header .menu ul li {
+  display: inline;
+  font-size: 20px;
+  color: white;
+  padding: 4vw;
+}
+
+.header .menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.header h1 {
+  margin-top: 1vh;
+  margin-bottom: 3%;
+  color: #009688;
+  font-size: 40px;
+  padding: 16px;
+}
+
+input[type=date] {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #EEEEEE;
+  font-weight: bold;
+  border-color: #009688;
+  color: #009688;
+  font-size: 16px;
+}
+
+.content {
+  margin-top: 5%;
+  width: 100%;
+  height: 70vh;
+}
+
+.content p {
+  font-size: 20px;
+  padding: 10px;
+}
